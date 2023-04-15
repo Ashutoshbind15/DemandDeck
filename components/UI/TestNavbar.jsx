@@ -25,6 +25,12 @@ const TestNav = () => {
         )}
 
         <div> {session && (isLoading ? "Loading" : user?.name)}</div>
+        <Link className="btn btn-ghost" href={"/demand/new"}>
+          New Poll
+        </Link>
+        <Link className="btn btn-ghost" href={"/demand"}>
+          Polls
+        </Link>
       </div>
     </div>
   );

@@ -35,8 +35,6 @@ export default function CreatePage() {
   const { createDemand } = usePollMutations();
 
   const onSubmit = (values) => {
-    // console.log(values, tags);
-    // console.log(values.state + "," + values.city + "," + values.area);
     createDemand.mutate({
       title: values.title,
       description: values.description,
@@ -44,9 +42,7 @@ export default function CreatePage() {
       tags,
     });
 
-    if (createDemand.isSuccess) {
-      router.push("/demand");
-    }
+    router.push("/demand");
   };
 
   const validate = (values) => {

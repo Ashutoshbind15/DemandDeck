@@ -1,14 +1,11 @@
-import Header from './components/Header';
-import About from './components/About';
-import Footer from './components/Footer';
+import About from "./About";
 
-function App() {
+function AdminDashboardComponent() {
   return (
     <div>
-     <Header/>
-    <About />
+      <About />
     </div>
   );
 }
 
-export default App;
+export default AdminDashboardComponent;

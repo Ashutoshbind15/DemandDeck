@@ -4,7 +4,7 @@ import { Search, Tune, Favorite, LocationOn } from "@mui/icons-material";
 import Demandcard from "./DemandCard";
 import DemandCard from "./DemandCard";
 
-export default function DemandsPage() {
+export default function DemandsPageComponent({ demands }) {
   return (
     <>
       <div class="px-4 flex justify-between items-center shadow-lg">
@@ -20,20 +20,23 @@ export default function DemandsPage() {
               </InputAdornment>
             }
           />
-            <Tune />
+          <Tune />
         </div>
-        <Favorite fontSize="large"/>
+        <Favorite fontSize="large" />
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
-            <DemandCard></DemandCard>
-            <DemandCard></DemandCard>
-            <DemandCard></DemandCard>
-            <DemandCard></DemandCard>
-            <DemandCard></DemandCard>
+        {demands?.map((el) => (
+          <DemandCard
+            location={el.location}
+            title={el.title}
+            tags={el.tags}
+            key={el._id}
+            numresp={el.proposals.length}
+            id={el._id}
+          />
+        ))}
       </div>
-
-
     </>
   );
 }
