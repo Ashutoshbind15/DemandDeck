@@ -17,9 +17,9 @@ export default function CreatePage() {
     setTagIp("");
   };
 
-  function closeHandler(index){
-        const newTags = tags.filter((element,i) => i != index);
-        setTags(newTags);
+  function closeHandler(index) {
+    const newTags = tags.filter((element, i) => i != index);
+    setTags(newTags);
   }
 
   const initialValues = {
@@ -45,7 +45,7 @@ export default function CreatePage() {
     });
 
     if (createDemand.isSuccess) {
-      router.push("/demands");
+      router.push("/demand");
     }
   };
 
@@ -202,7 +202,11 @@ export default function CreatePage() {
 
             <div className="my-4 w-full flex flex-wrap">
               {tags.map((tag, index) => (
-                <DropDownCard text={tag} key={index} onClick = {closeHandler.bind(this,index)}/>
+                <DropDownCard
+                  text={tag}
+                  key={index}
+                  onClick={closeHandler.bind(this, index)}
+                />
               ))}
             </div>
           </div>
