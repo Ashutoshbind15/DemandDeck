@@ -1,36 +1,20 @@
 import React from "react";
-import { useUserMutations } from "../../hooks/mutations";
-import { useUser } from "../../hooks/queries";
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import SessionPage from "../../components/Business/SessionPage";
-import UserPage from "../../components/UserPage";
+import Profile from "../../components/Vendor/Profile/Profile";
 
 const ProfilePage = () => {
-  const { editProfileMutation } = useUserMutations();
-  const { user, isLoading } = useUser();
-
   return (
-    <div>
-      {isLoading ? "Loading" : user?.name}
-      <Formik
-        initialValues={{
-          name: "",
-        }}
-        onSubmit={(values) => {
-          editProfileMutation.mutate({ ...values });
-        }}
-      >
-        <Form className="flex flex-col items-start">
-          <label htmlFor="">Name</label>
-          <Field type="text" name="name" />
-          <ErrorMessage name="name" component="div" />
-
-          <button type="submit" className="btn">
-            Submit
-          </button>
-        </Form>
-      </Formik>
-      <UserPage />
+    <div className="">
+      <Profile
+        name={"name1"}
+        description={
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates dolores a esse explicabo quasi iste consequatur, nulla amet ducimus! Expedita deserunt alias esse rem, corrupti minima eos amet ex similique."
+        }
+        credits={100}
+        email={"random@gmail.com"}
+        location={"Location"}
+        ratings={100}
+        key={Math.random.toString()}
+      />
     </div>
   );
 };
