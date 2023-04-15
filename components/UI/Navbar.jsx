@@ -4,11 +4,10 @@ import { signOut } from "next-auth/react";
 
 const Navbar = () => {
   const { data: session } = useSession();
-  console.log(session);
 
   const signouthandler = () => {
-    // signOut();
-    signIn("credentials", { email: "", password: "" });
+    signOut();
+    // signIn("credentials", { email: "", password: "" });
   };
 
   return (
