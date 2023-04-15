@@ -29,6 +29,12 @@ export const proposalmaker = async (payload) => {
   return data;
 };
 
+export const getBusiness = async (id) => {
+  console.log(id);
+  const { data } = await axios.get(`/api/business/${id}`);
+  return data;
+};
+
 export const getPollData = async (id) => {
   console.log(id);
   const { data } = await axios.get(`/api/demand/${id}`);
