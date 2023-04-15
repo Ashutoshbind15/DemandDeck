@@ -1,20 +1,25 @@
 import React from "react";
-import Sidebar from "../../../components/Session/Sidebar";
-import Dashboard from "../../../components/Session/Dashboard";
-import Request from "../../../components/Session/Request";
-import RequestBox from "../../../components/Session/RequestBox";
-import Review from "../../../components/Session/Review";
+import { useBusiness } from "../../../hooks/queries";
+import { useRouter } from "next/router";
+import axios from "axios";
 
-const SessionPage = () => {
+const BusinessPage = () => {
+  const router = useRouter();
+  const { id } = router.query;
+  const { business, error, isError, isLoading } = useBusiness(id);
+  const terminationHandler = async () => {};
+  if (isLoading) return <p>Loading</p>;
+
   return (
     <div>
-      <Sidebar />
-      <Dashboard />
-      <Request />
-      <RequestBox />
-      <Review />
+      <div className="mt-12">
+        {JSON.stringify(business)}
+        {/* <button className="btn btn-warning" onClick={terminationHandler}>
+          Terminate!
+        </button> */}
+      </div>
     </div>
   );
 };
 
-export default SessionPage;
+export default BusinessPage;
