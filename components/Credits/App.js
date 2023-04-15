@@ -1,18 +1,13 @@
 import React from "react";
-import Header from './components/Header'
-import Content from './components/Content';
-import Footer from './components/Footer';
+import Content from "./Content";
 
-function App() {
+function CreditPage() {
   return (
     <div>
-         <Header />
-         <h1 className="text-2xl text-center py-10">Active Ventures!</h1>
-         <Content />
-         <Footer />
-         </div>
-  
+      <h1 className="text-2xl text-center py-10">Active Ventures!</h1>
+      <Content />
+    </div>
   );
 }
 
-export default App;
+export default CreditPage;

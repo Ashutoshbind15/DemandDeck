@@ -24,13 +24,13 @@ export default function ActiveVentures() {
               )}
               <br></br>
               <div className="flex space-x-10">
-              <button
-                onClick={() => setShowContent1(!showContent1)}
-                class="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded"
-              >
+                <button
+                  onClick={() => setShowContent1(!showContent1)}
+                  class="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded"
+                >
                   {showContent1 ? "Hide Content" : "Show Content"}
-              </button>
-              <IncrementButton />
+                </button>
+                <IncrementButton />
               </div>
             </div>
           </div>
@@ -51,13 +51,13 @@ export default function ActiveVentures() {
               )}
               <br></br>
               <div className="flex space-x-10">
-              <button
-                onClick={() => setShowContent2(!showContent2)}
-                class="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded"
-              >
+                <button
+                  onClick={() => setShowContent2(!showContent2)}
+                  class="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded"
+                >
                   {showContent2 ? "Hide Content" : "Show Content"}
-              </button>
-              <IncrementButton />
+                </button>
+                <IncrementButton />
               </div>
             </div>
           </div>
@@ -78,13 +78,13 @@ export default function ActiveVentures() {
               )}
               <br></br>
               <div className="flex space-x-10">
-              <button
-                onClick={() => setShowContent3(!showContent3)}
-                class="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded"
-              >
+                <button
+                  onClick={() => setShowContent3(!showContent3)}
+                  class="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent rounded"
+                >
                   {showContent3 ? "Hide Content" : "Show Content"}
-              </button>
-              <IncrementButton />
+                </button>
+                <IncrementButton />
               </div>
             </div>
           </div>
