@@ -9,7 +9,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'sec':'#7000FF',
+        'sec-dark':'#4900A6',
+        'prim':'#FF038B',
+      },
+    },
   },
   plugins: [require("daisyui")],
 };
