@@ -4,7 +4,7 @@ import connectDB from "../../../utils/db.js";
 import { authOptions } from "./[...nextauth].js";
 
 const handler = async (req, res) => {
-  connectDB();
+  await connectDB();
   const sess = await getServerSession(req, res, authOptions);
 
   if (!sess) {
