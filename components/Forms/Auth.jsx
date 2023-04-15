@@ -15,7 +15,8 @@ export default function Auth({ signup, setSignup }) {
       signIn("credentials", { email, password });
     } else {
       await axios.post("/api/auth/signup", { email, password, name: username });
-      await signIn("credentials", {
+      
+      signIn("credentials", {
         email,
         password,
       });
