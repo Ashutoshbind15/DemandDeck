@@ -1,7 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+
+import LandingPageComponent from "../components/Landing Page/App";
 
 export default function Home() {
-  return <div className={styles.container}>Welcome</div>;
+  return (
+    <div>
+      <LandingPageComponent />
+    </div>
+  );
 }
