@@ -12,7 +12,6 @@ export default function Auth({ signup, setSignup }) {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (!signup) {
-      console.log(email, password);
       signIn("credentials", { email, password });
     } else {
       await axios.post("/api/auth/signup", { email, password, name: username });

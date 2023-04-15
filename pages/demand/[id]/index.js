@@ -18,10 +18,11 @@ const DemandPage = () => {
       pusherClient.subscribe(id);
 
       pusherClient.bind("msg", (payload) => {
-        console.log(payload);
         setMsgList((prev) => [...prev, payload.msg]);
       });
     }
+
+    return () => pusherClient.unsubscribe(id);
   }, [router.isReady]);
 
   return (

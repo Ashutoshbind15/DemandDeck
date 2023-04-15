@@ -6,7 +6,7 @@ export default function Login({ email, password, setEmail, setPassword }) {
   return (
     <div className="w-full my-6">
       <AuthInput placeholder="user@gmail.com" value={email} onChange={setEmail}>
-        <Mail />
+        {/* <Mail /> */}
       </AuthInput>
       <AuthInput
         type="password"
@@ -14,7 +14,7 @@ export default function Login({ email, password, setEmail, setPassword }) {
         value={password}
         onChange={setPassword}
       >
-        <Visibility />
+        {/* <Visibility /> */}
       </AuthInput>
     </div>
   );
