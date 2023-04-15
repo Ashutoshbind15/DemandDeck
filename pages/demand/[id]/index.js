@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import React from "react";
 import { usePoll } from "../../../hooks/queries";
 import { usePollMutations } from "../../../hooks/mutations";
-
 import Proposal from "../../../components/Demand/Proposal";
 import { DemandPageComponent } from "../../../components/Demand/DemandPage";
 
@@ -111,5 +110,3 @@ export default DemandPage;
 // };
 
 // export default DemandPage;
-
-

@@ -62,7 +62,7 @@ export const DemandPageComponent = ({
           <h2
             className="text-[32px] font-medium bg-sec p-4 rounded-lg text-white"
             onClick={() => {
-              router.push(`/demands/${id}/proposal`);
+              router.push(`/demand/${id}/proposal`);
             }}
           >
             Submit a proposal

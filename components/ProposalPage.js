@@ -15,7 +15,7 @@ export default function ProposalPage({ id }) {
     e.preventDefault();
     console.log(title, desc);
     makeProposal.mutate({ title, description: desc, id });
-    router.push(`/demands/${id}`);
+    router.push(`/demand/${id}`);
   };
 
   return (

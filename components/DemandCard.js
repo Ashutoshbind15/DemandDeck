@@ -15,7 +15,7 @@ export default function DemandCard({
   return (
     <div
       className="m-4 flex md:flex-col items-center border-2 rounded-2xl w-full md:w-[400px] h-[225px] md:h-[450px] shadow-lg hover:shadow-2xl relative hover:cursor-pointer"
-      onClick={() => router.push(`/demands/${id}`)}
+      onClick={() => router.push(`/demand/${id}`)}
     >
       <div className="w-2/5 md:w-full h-full md:h-1/2 rounded-ss-2xl rounded-es-2xl md:rounded-t-2xl md:rounded-es-none flex justify-center items-center bg-sec">
         <div className="absolute top-0 left-0 md:right-0 p-1 md:p-4 cursor-pointer">
@@ -35,7 +35,12 @@ export default function DemandCard({
           </h3>
           <h3 className="md:text-[20px]">Responses</h3>
         </div>
-        <h2 className="text-[12px] md:text-[16px] text-center"> {tags} </h2>
+        <h2 className="text-[12px] md:text-[16px] text-center">
+          {" "}
+          {tags.map((el) => (
+            <p className="mx-2">{el}</p>
+          ))}{" "}
+        </h2>
         <div className="flex justify-center items-center">
           <LocationOn />
           <h2 className="text-gray-500 text-center text-[10px] md:text-[14px]">
