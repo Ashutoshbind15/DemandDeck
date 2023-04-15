@@ -1,21 +1,19 @@
-import Header from "./components/Header";
-import Banner from "./components/Banner";
-import Experts from "./components/Experts";
-import NewsLetter from "./components/NewsLetter";
-import Plans from "./components/Plans";
-import Footer from "./components/Footer";
-import CarouselGallery from "./components/CarouselGallery";
+import Banner from "./Banner";
+// import CarouselGallery from "./CarouselGallery";
+import Footer from "./Footer";
+import Header from "./Header";
+import NewsLetter from "./NewsLetter";
+import Plans from "./Plans";
 
-function App() {
-  return (<>
-  
-  <Header/>
-  <Banner/>
-  <CarouselGallery />
-  <NewsLetter/>
-  <Plans/>
-  <Footer/>
-  </>);
+function LandingPageComponent() {
+  return (
+    <>
+      <Banner />
+      {/* <CarouselGallery /> */}
+      <Plans />
+      <NewsLetter />
+    </>
+  );
 }
 
-export default App;
+export default LandingPageComponent;
