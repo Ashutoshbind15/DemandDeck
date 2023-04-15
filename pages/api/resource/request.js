@@ -1,7 +1,6 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]";
 import connectDB from "../../../utils/db";
-import Resource from "../../../models/Resources";
 import User from "../../../models/User";
 import Business from "../../../models/Business";
 
