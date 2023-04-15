@@ -10,8 +10,9 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 const Navbar = () => {
   const { data: session } = useSession();
 
-  const logoutHandler = () => {
+  const signouthandler = () => {
     signOut();
+    // signIn("credentials", { email: "", password: "" });
   };
 
   const { user, isLoading, isError, error } = useUser();

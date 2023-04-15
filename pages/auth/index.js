@@ -5,23 +5,33 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Auth from "../../components/Forms/Auth";
 import { useRouter } from "next/router";
+import { authOptions } from "../api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
 
-const AuthPage = () => {
-  const { data: session } = useSession();
+const AuthPage = ({ session }) => {
   const [signup, setSignup] = useState(true);
-  console.log(session);
-
-  const router = useRouter();
 
   const toggleHandler = () => {
     setSignup((prev) => !prev);
   };
 
-  if (!session) {
-    return <Auth signup={signup} setSignup={toggleHandler} />;
-  } else {
-    router.push("/");
-  }
+  return <Auth signup={signup} setSignup={toggleHandler} />;
 };
 
 export default AuthPage;
+
+export const getServerSideProps = async (context) => {
+  const session = await getServerSession(context.req, context.res, authOptions);
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/",
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
