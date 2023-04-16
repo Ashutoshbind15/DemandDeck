@@ -2,7 +2,7 @@ import { InputAdornment, OutlinedInput } from "@mui/material";
 import React, { useState } from "react";
 import { Search, Tune, Favorite, LocationOn } from "@mui/icons-material";
 
-export default function () {
+const SearchBar = () => {
   const [searchText, setSearchText] = useState("");
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -27,8 +27,8 @@ export default function () {
         }
         onChange={(event) => setSearchText(event.target.value)}
         onKeyPress={handleKeyPress}
-
       />
     </div>
   );
-}
+};
+export default SearchBar;

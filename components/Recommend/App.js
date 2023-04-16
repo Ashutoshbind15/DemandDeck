@@ -36,7 +36,7 @@ function RecommendationComponent() {
         <div className="block pl-12 py-6">
           <div>
             {city.map((el) => (
-              <MapItem item={el} />
+              <MapItem item={el} key={Math.random.toString()} />
             ))}
           </div>
         </div>

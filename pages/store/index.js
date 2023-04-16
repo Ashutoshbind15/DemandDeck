@@ -21,7 +21,7 @@ const ResourceStore = () => {
   return (
     <div className="flex flex-wrap my-8">
       {temp.map((el) => (
-        <Resource resource={el} />
+        <Resource resource={el} key={Math.random.toString()} />
       ))}
     </div>
   );
