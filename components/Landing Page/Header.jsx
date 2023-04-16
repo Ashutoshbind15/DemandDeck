@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { Menu , Close } from "react-icons/ai";
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
@@ -8,7 +8,7 @@ export default function Header() {
       <div className="max-w-[1240px] py-[12px]  items-center flex justify-between ">
         <div className="text-3xl font-bold text-white">DemandDeck</div>
         {toggle ? (
-          <AiOutlineClose
+          <button
             onClick={() => setToggle(!toggle)}
             className="text-white text-2xl md:hidden block"
           />
