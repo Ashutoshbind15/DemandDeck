@@ -7,7 +7,11 @@ const Profile = ({ business }) => {
       <div className="flex py-12">
         <div className="flex flex-col mx-2 items-center justify-around w-1/2 px-8">
           <div className="h-72 bg-red-400 relative w-full">
-            <Image src={"/images/business_profile.png"} fill={true} />
+            <Image
+              src={"/images/business_profile.png"}
+              fill={true}
+              alt="Business"
+            />
           </div>
           <div className="my-4">{business?.onRequest.title}</div>
         </div>
@@ -28,13 +32,6 @@ const Profile = ({ business }) => {
               {business.owner.email}
             </div>
           </div>
-
-          {/* <div className="flex flex-col my-4 w-full">
-            <div className="flex justify-around w-full flex-wrap my-4">
-              <div className="bg-blue-400 h-40 w-1/3 relative"></div>
-              <div className="bg-blue-400 h-40 w-1/3 relative"></div>
-            </div>
-          </div> */}
         </div>
       </div>
     </>
