@@ -43,13 +43,14 @@ export const DemandPageComponent = ({
           <div className="w-full mt-8 flex justify-between items-center">
             <h2 className="text-[32px] font-medium">Upvote Here</h2>
             <div
-              className="h-20 w-20 flex items-center justify-center rounded-full bg-[#38EA35] text-white hover:cursor-pointer"
+              className="h-20 w-20 flex items-center justify-center rounded-full bg-[#38EA35] text-white text-[32px] hover:cursor-pointer"
               onClick={voteHandler}
             >
               {"+"}
             </div>
           </div>
         )}
+        
         {session && session.user && session.user.role === "vendor" && (
           <div className="w-full mt-8 flex justify-between items-center transition-all hover:scale-105 cursor-pointer">
             {!active &&
@@ -57,7 +58,7 @@ export const DemandPageComponent = ({
                 return el.creator._id === session.user.id;
               }) ? (
                 <h2
-                  className="text-[32px] font-medium bg-sec p-4 rounded-lg text-white"
+                  className="font-medium bg-prim mx-auto p-4 rounded-lg text-white"
                   onClick={() => {
                     router.push(`/demand/${id}/proposal`);
                   }}
@@ -72,19 +73,16 @@ export const DemandPageComponent = ({
       </div>
       <div className="w-full flex flex-col items-center">
         <div id="title" className="mt-8 mb-4 text-xl font-bold">
-          <h1 className="text-center">{title}</h1>
+          <h1 className="text-center text-[48px] my-8">{title}</h1>
           <div className="flex my-2">
             <div> {Location}</div>
-            <div>6A/155 I.T Crossing Faizabad Road,Lucknow</div>
+            <h4 className = "text-center">6A/155 I.T Crossing Faizabad Road,Lucknow</h4>
           </div>
-
-          <hr className="mt-1" />
+        <hr className="mt-1" />
         </div>
-        <div id="description my-4">
+        <div className="w-full md:w-3/5 description my-4 flex flex-col items-center">
           <h2 className="text-[20px] font-semibold my-2">Description</h2>
-          <div className="w-full md:w-3/5 my-4">
-            <p>{description}</p>
-          </div>
+          <p>{description}</p>
           <div className="w-full md:w-3/5 grid grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-2">
             {tags?.map((el) => (
               <p className="text-gray-500" key={Math.random.toString()}>

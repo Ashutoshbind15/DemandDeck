@@ -15,7 +15,7 @@ export default function DemandsPageComponent({ demands }) {
         <h2 class="text-2xl font-bold">1299 Demands</h2>
         <div class="flex justify-evenly items-center w-1/2">
           <div className="input-group my-2">
-            <button className="btn btn-square">{Search}</button>
+            <button className="btn btn-square bg-white">{Search}</button>
             <input
               type="text"
               placeholder="Search"

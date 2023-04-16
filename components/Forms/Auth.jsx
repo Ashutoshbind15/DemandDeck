@@ -10,6 +10,8 @@ export default function Auth({ signup, setSignup }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [role, setRole] = useState("select role");
 
   const submitHandler = async (e) => {
@@ -17,21 +19,22 @@ export default function Auth({ signup, setSignup }) {
     if (!signup) {
       signIn("credentials", { email, password });
     } else {
+      setIsLoading(true);
       await axios.post("/api/auth/signup", {
         email,
         password,
         name: username,
         role,
       });
-
+       
       signIn("credentials", {
         email,
         password,
       });
     }
   };
-
-  return (
+  if(isLoading) return <div className="w-full h-screen flex justify-center items-center"><div className="radial-progress text-primary" style={{"--value":70,"--size": "12rem"}}>Loading...</div></div>
+  else return (
     <div className="flex flex-col md:flex-row justify-around items-center px-10 py-4">
       <div className="w-full md:w-2/5">
         <Image

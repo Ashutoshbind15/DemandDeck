@@ -12,10 +12,10 @@ export default function AuthInput({
     <>
   {position===undefined || position === "start"?
   <div className="input-group my-2">
-    <button className= "btn btn-square">
+    <button className= "btn btn-square bg-white border-2">
      {children}
     </button>
-    <input type={type == null ? "text" : type} placeholder={placeholder} className="input input-bordered rounded-3xl w-full p-4" 
+    <input type={type == null ? "text" : type} placeholder={placeholder} className="input input-bordered rounded-3xl w-full p-4 focus:outline-none" 
       onChange={(e) => onChange(e.target.value)}
       value = {value}
     />
