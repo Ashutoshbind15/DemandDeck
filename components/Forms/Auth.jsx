@@ -9,13 +9,20 @@ export default function Auth({ signup, setSignup }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [role, setRole] = useState("select role");
+
   const submitHandler = async (e) => {
     e.preventDefault();
     if (!signup) {
       signIn("credentials", { email, password });
     } else {
-      await axios.post("/api/auth/signup", { email, password, name: username });
-      
+      await axios.post("/api/auth/signup", {
+        email,
+        password,
+        name: username,
+        role,
+      });
+
       signIn("credentials", {
         email,
         password,
@@ -44,6 +51,8 @@ export default function Auth({ signup, setSignup }) {
             setUsername={setUsername}
             setEmail={setEmail}
             setPassword={setPassword}
+            role={role}
+            setRole={setRole}
           />
         ) : (
           <Login

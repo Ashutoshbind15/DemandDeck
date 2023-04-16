@@ -12,8 +12,6 @@ const TestNav = () => {
     signOut();
   };
 
-  console.log(user);
-
   return (
     <div className="bg-blue-600 text-white flex justify-between items-center">
       <div className="btn btn-ghost">DemandDeck</div>
@@ -25,9 +23,11 @@ const TestNav = () => {
         )}
 
         <div> {session && (isLoading ? "Loading" : user?.name)}</div>
-        <Link className="btn btn-ghost" href={"/demand/new"}>
-          New Poll
-        </Link>
+        {session && session.user && session.user.role === "basic" && (
+          <Link className="btn btn-ghost" href={"/demand/new"}>
+            New Poll
+          </Link>
+        )}
         <Link className="btn btn-ghost" href={"/demand"}>
           Polls
         </Link>
