@@ -4,6 +4,7 @@ import connectDB from "../../../utils/db.js";
 import { authOptions } from "./[...nextauth].js";
 import Resource from "../../../models/Resource.js";
 import Business from "../../../models/Business.js";
+import Demand from "../../../models/Demand.js";
 
 const handler = async (req, res) => {
   connectDB();
@@ -58,6 +59,14 @@ const handler = async (req, res) => {
               ],
             },
           ],
+        })
+        .populate({
+          path: "businesses",
+          model: Business,
+        })
+        .populate({
+          path: "demandCreated",
+          model: Demand,
         });
       res.status(200).json(user);
     } else if (req.method == "PUT") {

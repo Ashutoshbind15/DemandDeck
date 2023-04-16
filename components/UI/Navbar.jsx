@@ -18,7 +18,7 @@ const Navbar = () => {
   const { user, isLoading, isError, error } = useUser();
   const [toggle, setToggle] = useState(false);
   return (
-    <div className="navbar justify-between bg-prim sticky top-0 z-10">
+    <div className="navbar justify-between bg-prim sticky top-0 z-10 px-6 text-xl">
       <Link href="/" className="text-xl font-bold text-white">
         DemandDeck
       </Link>
@@ -38,53 +38,49 @@ const Navbar = () => {
         </button>
       )}
       <div className="w-1/3 hidden md:flex justify-between text-white">
-        <Link href="/">Home</Link>
-        <Link href="/demands">Demands</Link>
-        <Link href="/create">Create</Link>
+        {session && (
+          <Link
+            href="/auth/userprofile"
+            className="hover:border-b-2 border-white"
+          >
+            {user?.name}
+          </Link>
+        )}
+        <Link href="/demand" className="hover:border-b-2 border-white">
+          Demands
+        </Link>
+        <Link href="/demand/new" className="hover:border-b-2 border-white">
+          Create
+        </Link>
       </div>
 
-      <Link href="/authentication" className="hidden md:block">
-        <button className="btn w-40 rounded-full border-none bg-white text-black transition duration-300 ease-in-out hover:bg-black hover:text-white">
-          Login
+      {!session && (
+        <Link href="/auth" className="hidden md:block">
+          <button className="btn w-40 rounded-full border-none bg-white text-black transition duration-300 ease-in-out  hover:text-prim hover:bg-white">
+            Login
+          </button>
+        </Link>
+      )}
+      {!!session && (
+        <button
+          className="btn w-40 rounded-full border-none bg-white text-black transition duration-300 ease-in-out  hover:text-prim hover:bg-white"
+          onClick={signouthandler}
+        >
+          Logout
         </button>
-      </Link>
+      )}
 
-      {/* Responsive Menu */}
       <div
         className={`duration-300 flex flex-col items-start justify-around md:hidden w-full h-[200px] text-white fixed bg-black top-16 
        ${toggle ? "left-[0]" : "left-[-100%]"}  `}
       >
         <Link href="/">Home</Link>
-        <Link href="/demands">Demands</Link>
-        <Link href="/create">Create</Link>
-        <Link href="/authentication">Login</Link>
+        <Link href="/demand">Demands</Link>
+        <Link href="/demand/new">Create</Link>
+        <Link href="/auth">Login</Link>
       </div>
     </div>
   );
 };
 
 export default Navbar;
-
-
-// import { signIn, useSession } from "next-auth/react";
-// import React from "react";
-// import { signOut } from "next-auth/react";
-
-// const Navbar = () => {
-//   const { data: session } = useSession();
-//   console.log(session);
-
-//   const signouthandler = () => {
-//     // signOut();
-//     signIn("credentials", { email: "", password: "" });
-//   };
-
-//   return (
-//     <div className="bg-blue-600 text-white">
-//       <div className="btn btn-ghost">Navbar</div>
-//       <div onClick={() => signouthandler()}>Logout</div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
