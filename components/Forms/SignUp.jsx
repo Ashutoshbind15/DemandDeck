@@ -1,6 +1,6 @@
 import React from "react";
 import AuthInput from "../UI/AuthInput";
-import { Person, Mail, Visibility } from "@mui/icons-material";
+import { Person, Mail, Visibility } from "../../public/icons";
 
 export default function SignUp({
   email,
@@ -15,18 +15,19 @@ export default function SignUp({
   return (
     <div className="w-full my-6">
       <AuthInput placeholder="UserName" onChange={setUsername} value={username}>
-        <Person />
+        {Person}
       </AuthInput>
       <AuthInput placeholder="user@gmail.com" onChange={setEmail} value={email}>
-        <Mail />
+        {Mail}
       </AuthInput>
+
       <AuthInput
         type="password"
         placeholder="Password"
         onChange={setPassword}
         value={password}
       >
-        <Visibility />
+        {Visibility}
       </AuthInput>
       {/* <div className="w-full flex justify-between">
         <label className="label cursor-pointer">
