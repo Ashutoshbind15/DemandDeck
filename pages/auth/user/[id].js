@@ -38,6 +38,7 @@ export default function UserPage() {
               key={el._id}
               numresp={el.proposals.length}
               id={el._id}
+              numsup={el.responses.length}
             />
           ))}
         </div>

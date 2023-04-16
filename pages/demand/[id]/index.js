@@ -39,6 +39,7 @@ const DemandPage = () => {
       {session &&
         session.user &&
         session.user.role === "admin" &&
+        !demand.active &&
         demand?.proposals?.map(
           (prop) =>
             prop.status === "req" && (
