@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LocationOn, ThumbUp } from "@mui/icons-material";
+import { Location, ThumbUp } from "../../public/icons"
 
 import { useRouter } from "next/router";
 import { usePollMutations } from "../../hooks/mutations";
