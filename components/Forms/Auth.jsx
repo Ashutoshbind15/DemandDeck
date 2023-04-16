@@ -32,7 +32,7 @@ export default function Auth({ signup, setSignup }) {
   };
 
   return (
-    <div className="w-screen flex flex-col md:flex-row justify-around items-center px-10 py-4">
+    <div className="flex flex-col md:flex-row justify-around items-center px-10 py-4">
       <div className="w-full md:w-2/5">
         <img src="/images/auth.png" className="w-full object-cover" alt="authImage" />
       </div>
@@ -70,7 +70,7 @@ export default function Auth({ signup, setSignup }) {
             className="btn w-40 rounded-full border-none bg-sec hover:bg-sec-dark"
             onClick={() => setSignup()}
           >
-            {signup ? "Sign Up" : "Log in"}
+            {signup ? "Log in" : "Sign Up"}
           </button>
           <button
             className="btn w-40 rounded-full border-none bg-sec hover:bg-sec-dark"
