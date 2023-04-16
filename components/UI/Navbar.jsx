@@ -54,6 +54,11 @@ const Navbar = () => {
             Create
           </Link>
         )}
+        {session && session.user && session.user.role === "allocator" && (
+          <Link href="/allocator" className="hover:border-b-2 border-white">
+            Allocate
+          </Link>
+        )}
       </div>
 
       {!session && (
