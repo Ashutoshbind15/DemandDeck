@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Location, ThumbUp } from "../../public/icons"
+import { Location, ThumbUp } from "../../public/icons";
 
 import { useRouter } from "next/router";
 import { usePollMutations } from "../../hooks/mutations";
@@ -38,20 +38,7 @@ export const DemandPageComponent = ({
         <div className="w-full h-60 bg-sec text-white rounded-2xl flex flex-col justify-center items-center">
           <h2 className="text-[48px] font-semibold"> {numresp} </h2>
           <h4>Asked For This Service</h4>
-          <div className="w-20 relative">
-            <Avatar
-              src="https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
-              className="absolute left-0"
-            />
-            <Avatar
-              src="https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
-              className="absolute left-4"
-            />
-            <Avatar
-              src="https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
-              className="absolute left-8"
-            />
-          </div>
+          <div className="w-20 relative"></div>
         </div>
         {session && session.user && session.user.role === "basic" && (
           <div className="w-full mt-8 flex justify-between items-center">
@@ -84,44 +71,39 @@ export const DemandPageComponent = ({
           </div>
         )}
       </div>
-      <div id="title" className="mt-8 mb-4">
-        <h1 className="text-[24px] md:text-[32px] font-bold">{title}</h1>
-        <h6 className="text-[12px] text-gray-500">
-          <LocationOn />
-          6A/155 I.T Crossing Faizabad Road,Lucknow
-        </h6>
-        <hr className="mt-1" />
-      </div>
-      <div id="description my-4">
-        <h2 className="text-[20px] font-semibold my-2">Description</h2>
-        <div className="w-full md:w-3/5 my-4">
-          <p>{description}</p>
+      <div className="w-full flex flex-col items-center">
+        <div id="title" className="mt-8 mb-4 text-xl font-bold">
+          <h1 className="text-center">{title}</h1>
+          <div className="flex my-2">
+            <div> {Location}</div>
+            <div>6A/155 I.T Crossing Faizabad Road,Lucknow</div>
+          </div>
+
+          <hr className="mt-1" />
         </div>
-        <div className="w-full md:w-3/5 grid grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-2">
-          {tags?.map((el) => (
-            <p className="text-gray-500" key={Math.random.toString()}>
-              {el}
-            </p>
-          ))}
+        <div id="description my-4">
+          <h2 className="text-[20px] font-semibold my-2">Description</h2>
+          <div className="w-full md:w-3/5 my-4">
+            <p>{description}</p>
+          </div>
+          <div className="w-full md:w-3/5 grid grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-2">
+            {tags?.map((el) => (
+              <p className="text-gray-500" key={Math.random.toString()}>
+                {el}
+              </p>
+            ))}
+          </div>
         </div>
-      </div>
-      <div id="applications" className="my-8">
-        <h2 className="text-[20px] font-semibold">
-          {" "}
-          {numprop} Applications {active ? "Closed" : "Requested"}
-        </h2>
-      </div>
-      <div id="resources" className="my-8">
-        <h2 className="text-[20px] font-semibold my-2">Resources Offered</h2>
-        <ul className="list-disc px-8">
-          <li>Approval of Hostel Warden</li>
-          <li>Land</li>
-          <li>Water</li>
-        </ul>
-      </div>
-      <div id="location" className="my-8">
-        <h2 className="text-[20px] font-semibold my-2"> {location} </h2>
-        <div className="w-full md:w-3/5 h-72"></div>
+        <div id="applications" className="my-8">
+          <h2 className="text-[20px] font-semibold">
+            {" "}
+            {numprop} Applications {active ? "Closed" : "Requested"}
+          </h2>
+        </div>
+
+        <div id="location" className="my-8">
+          <h2 className="text-[20px] font-semibold my-2"> {location} </h2>
+        </div>
       </div>
     </div>
   );

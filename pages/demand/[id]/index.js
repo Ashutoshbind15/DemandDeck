@@ -22,7 +22,7 @@ const DemandPage = () => {
   if (isLoading) return <p>Loading</p>;
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <DemandPageComponent
         description={demand.description}
         location={demand.location}
@@ -53,7 +53,7 @@ const DemandPage = () => {
 
       {demand?.active && (
         <div
-          className="btn btn-primary"
+          className="btn btn-primary mb-8 py-8 px-28"
           onClick={() =>
             router.push(
               `/business/${JSON.parse(JSON.stringify(demand.active._id))}`

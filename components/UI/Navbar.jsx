@@ -5,7 +5,7 @@ import { getUserData } from "../../utils/api";
 import { useUser } from "../../hooks/queries";
 
 import React, { useState } from "react";
-import { Menu, Close} from "../../public/icons";
+import { Menu, Close } from "../../public/icons";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -34,7 +34,7 @@ const Navbar = () => {
           onClick={() => setToggle(!toggle)}
           className="text-white text-2xl md:hidden block"
         >
-        {Menu}
+          {Menu}
         </button>
       )}
       <div className="w-1/3 hidden md:flex justify-between text-white">
@@ -49,9 +49,11 @@ const Navbar = () => {
         <Link href="/demand" className="hover:border-b-2 border-white">
           Demands
         </Link>
-        <Link href="/demand/new" className="hover:border-b-2 border-white">
-          Create
-        </Link>
+        {session && session.user && session.user.role === "basic" && (
+          <Link href="/demand/new" className="hover:border-b-2 border-white">
+            Create
+          </Link>
+        )}
       </div>
 
       {!session && (

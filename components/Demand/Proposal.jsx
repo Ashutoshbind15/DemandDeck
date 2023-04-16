@@ -5,7 +5,7 @@ const Proposal = ({ proposal, proposalAcceptHandler }) => {
   const [isLtd, setIsLtd] = useState(true);
 
   return (
-    <div className="card bg-slate-800 text-white my-2 mx-4">
+    <div className="card bg-slate-800 text-white mx-4">
       <div className="card-body">
         <div className="card-title">Proposed-By - {proposal.creator.name}</div>
         <p>{isLtd ? "" : proposal.description}</p>
