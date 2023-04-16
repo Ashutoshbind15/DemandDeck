@@ -3,6 +3,7 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import { signIn } from "next-auth/react";
 import axios from "axios";
+import Image from "next/image";
 
 export default function Auth({ signup, setSignup }) {
   const [username, setUsername] = useState("");
@@ -33,7 +34,11 @@ export default function Auth({ signup, setSignup }) {
   return (
     <div className="w-screen flex flex-col md:flex-row justify-around items-center px-10 py-4">
       <div className="w-full md:w-2/5">
-        <img src="/images/auth.png" className="object-cover" alt="authImage" />
+        <Image
+          src="/images/auth.png"
+          className="object-cover"
+          alt="authImage"
+        />
       </div>
       <div className="w-full md:text-left text-center md:w-2/5">
         <h1 className="text-[32px] md:text-[48px] font-bold leading-tight">

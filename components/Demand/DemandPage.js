@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { usePollMutations } from "../../hooks/mutations";
 import Avatar from "../UI/Avatar";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 export const DemandPageComponent = ({
   numresp,
@@ -121,9 +122,10 @@ export const DemandPageComponent = ({
       <div id="location" className="my-8">
         <h2 className="text-[20px] font-semibold my-2"> {location} </h2>
         <div className="w-full md:w-3/5 h-72">
-          <img
+          <Image
             src="https://k8q3f6p8.rocketcdn.me/wp-content/uploads/2019/05/Google-Maps-Tips.png"
             className="h-full w-full object-cover"
+            alt="ok"
           />
         </div>
       </div>
