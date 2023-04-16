@@ -40,7 +40,7 @@ const Navbar = () => {
       <div className="w-1/3 hidden md:flex justify-between text-white">
         {session && (
           <Link
-            href="/auth/userprofile"
+            href={`/auth/user/${session.user.id}`}
             className="hover:border-b-2 border-white"
           >
             {user?.name}

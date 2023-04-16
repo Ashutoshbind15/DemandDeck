@@ -16,7 +16,7 @@ const handler = async (req, res) => {
     const { id } = sess.user;
     if (req.method == "GET") {
       const user = await User.findById(id)
-        .select("-password -role")
+        .select("-password")
         .populate({
           path: "resourcesClassified",
           populate: [
@@ -63,6 +63,11 @@ const handler = async (req, res) => {
         .populate({
           path: "businesses",
           model: Business,
+          populate: {
+            path: "onRequest",
+            select: "title description",
+            model: Demand,
+          },
         })
         .populate({
           path: "demandCreated",
