@@ -1,4 +1,4 @@
-import { Favorite, LocationOn } from "@mui/icons-material";
+import { Favorite, Location } from "../public/icons";
 import { useRouter } from "next/router";
 import React from "react";
 

@@ -6,7 +6,6 @@ import { getServerSession } from "next-auth";
 const CreateDemand = () => {
   return (
     <div>
-      CreateDemand
       <CreatePage />
     </div>
   );

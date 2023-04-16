@@ -64,7 +64,7 @@ export default function Plans() {
             </div>
           </div>
         </div>
-        <div className="shadow-xl h-[660px] my-4  hover:scale-105 duration-500">
+        <div className="shadow-xl h-[660px] my-4 hover:scale-105 duration-500">
           <div className="h-[350px]">
             <Image
               src={AshutoshS}

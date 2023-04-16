@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FaFacebookSquare,
-  FaGithubSquare,
-  FaInstagram,
-  FaTwitterSquare,
-} from "react-icons/fa";
+import {LinkedIn,Instagram,GitHub} from "../../public/icons"
 
 const Footer = () => {
   return (
@@ -19,10 +14,9 @@ const Footer = () => {
           accusantium.
         </p>
         <div className="flex justify-between md:w-[75%] my-6">
-          <FaFacebookSquare size={30}></FaFacebookSquare>
-          <FaInstagram size={30} />
-          <FaTwitterSquare size={30} />
-          <FaGithubSquare size={30} />
+            {LinkedIn}
+            {Instagram}
+            {GitHub}
         </div>
       </div>
       <div className="lg:col-span-2 flex justify-between mt-6">
