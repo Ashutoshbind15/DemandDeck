@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-
-import { DemandPageComponent } from "../../components/Demand/DemandPage";
 import { useUser } from "../../hooks/queries";
-import DemandsPageComponent from "../../components/DemandsPage";
 import DemandCard from "../../components/DemandCard";
 import BusinessCard from "../../components/Business/businessCard";
 
@@ -59,7 +56,12 @@ export default function UserPage() {
           </div>
         </div> */}
         {user.businesses.map((el) => (
-          <BusinessCard />
+          <BusinessCard
+            business={el}
+            key={el._id}
+            id={el._id}
+            title={el.onRequest.title}
+          />
         ))}
       </div>
     </div>
