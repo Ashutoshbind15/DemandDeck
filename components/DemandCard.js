@@ -1,6 +1,6 @@
-import { Favorite, Location } from "../public/icons";
 import { useRouter } from "next/router";
 import React from "react";
+import { Favorite, Location } from "../public/icons";
 
 export default function DemandCard({
   numsup,
@@ -19,7 +19,7 @@ export default function DemandCard({
     >
       <div className="w-2/5 md:w-full h-full md:h-1/2 rounded-ss-2xl rounded-es-2xl md:rounded-t-2xl md:rounded-es-none flex justify-center items-center bg-sec">
         <div className="absolute top-0 left-0 md:right-0 p-1 md:p-4 cursor-pointer">
-          <Favorite className="text-[20px] md:text-[40px] text-white" />
+          {Favorite}
         </div>
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-white text-[32px] md:text-[64px]"> {numsup} </h1>
@@ -44,7 +44,7 @@ export default function DemandCard({
           ))}{" "}
         </h2>
         <div className="flex justify-center items-center">
-          <LocationOn />
+          {Location}
           <h2 className="text-gray-500 text-center text-[10px] md:text-[14px]">
             {" "}
             {location}{" "}

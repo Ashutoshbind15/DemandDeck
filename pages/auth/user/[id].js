@@ -44,7 +44,9 @@ export default function UserPage() {
       </div>
 
       <div className="w-full my-8">
-        <h1 className="text-[32px] text-semibold my-4">Current Sessions</h1>
+        <h1 className="text-center text-2xl text-semibold my-4 ">
+          Current Sessions
+        </h1>
 
         {user.businesses.map((el) => (
           <BusinessCard
