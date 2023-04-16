@@ -15,7 +15,7 @@ const ResourceStore = () => {
     if (user) {
       const helper = async () => {
         const { data } = await axios.post("/api/resource/find", {
-          location: user?.location,
+          location: user.location ? user.location : "Mumbai",
         });
 
         setTemp(data);

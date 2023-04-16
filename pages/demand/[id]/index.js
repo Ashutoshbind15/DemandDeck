@@ -4,6 +4,7 @@ import { usePoll } from "../../../hooks/queries";
 import { usePollMutations } from "../../../hooks/mutations";
 import Proposal from "../../../components/Demand/Proposal";
 import { DemandPageComponent } from "../../../components/Demand/DemandPage";
+import { useSession } from "next-auth/react";
 
 const DemandPage = () => {
   const router = useRouter();
@@ -15,6 +16,8 @@ const DemandPage = () => {
   const proposalAcceptHandler = (ownerId) => {
     acceptProposal.mutate({ id, owner: JSON.parse(JSON.stringify(ownerId)) });
   };
+
+  const { data: session } = useSession();
 
   if (isLoading) return <p>Loading</p>;
 
@@ -33,16 +36,19 @@ const DemandPage = () => {
         active={demand.active}
       />
 
-      {demand?.proposals?.map(
-        (prop) =>
-          prop.status === "req" && (
-            <Proposal
-              proposal={prop}
-              demandId={id}
-              proposalAcceptHandler={proposalAcceptHandler}
-            />
-          )
-      )}
+      {session &&
+        session.user &&
+        session.user.role === "admin" &&
+        demand?.proposals?.map(
+          (prop) =>
+            prop.status === "req" && (
+              <Proposal
+                proposal={prop}
+                demandId={id}
+                proposalAcceptHandler={proposalAcceptHandler}
+              />
+            )
+        )}
 
       {demand?.active && (
         <div

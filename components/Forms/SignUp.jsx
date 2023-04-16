@@ -9,6 +9,8 @@ export default function SignUp({
   setEmail,
   setUsername,
   setPassword,
+  role,
+  setRole,
 }) {
   return (
     <div className="w-full my-6">
@@ -26,7 +28,7 @@ export default function SignUp({
       >
         <Visibility />
       </AuthInput>
-      <div className="w-full flex justify-between">
+      {/* <div className="w-full flex justify-between">
         <label className="label cursor-pointer">
           <span className="label-text text-[18px] mx-2">Individual</span>
           <input
@@ -46,6 +48,28 @@ export default function SignUp({
             className="radio radio-primary"
           />
         </label>
+      </div> */}
+      <div className="dropdown w-full">
+        <label tabIndex={0} className="btn m-1 w-full">
+          {role}
+        </label>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <a className="hover:bg-purple-600" onClick={() => setRole("basic")}>
+            Basic
+          </a>
+          <a className="hover:bg-purple-600" onClick={() => setRole("vendor")}>
+            Vendor
+          </a>
+          <a
+            className="hover:bg-purple-600"
+            onClick={() => setRole("allocator")}
+          >
+            Allocator
+          </a>
+        </ul>
       </div>
     </div>
   );

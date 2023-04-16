@@ -4,12 +4,14 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import Business from "../../../components/Business/Business";
 import Resource from "../../../components/Resource/Resource";
+import { useSession } from "next-auth/react";
 
 const BusinessPage = () => {
   const router = useRouter();
   const { id } = router.query;
   const { business, error, isError, isLoading } = useBusiness(id);
   const terminationHandler = async () => {};
+  const { data: session } = useSession();
   if (isLoading) return <p>Loading</p>;
 
   return (
@@ -41,6 +43,17 @@ const BusinessPage = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="w-full justify-center flex my-4">
+          {session && session.user && session.user.role === "vendor" && (
+            <div
+              className="btn btn-primary"
+              onClick={() => router.push(`/business/${id}/store`)}
+            >
+              Go to store
+            </div>
+          )}
         </div>
       </div>
     </div>

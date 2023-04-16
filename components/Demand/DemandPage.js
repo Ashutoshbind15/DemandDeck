@@ -5,6 +5,7 @@ import { LocationOn, ThumbUp } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import { usePollMutations } from "../../hooks/mutations";
 import Avatar from "../UI/Avatar";
+import { useSession } from "next-auth/react";
 
 export const DemandPageComponent = ({
   numresp,
@@ -28,6 +29,8 @@ export const DemandPageComponent = ({
 
   const router = useRouter();
 
+  const { data: session } = useSession();
+
   return (
     <div className="w-full p-4">
       <div id="service" className="w-full md:w-2/5 mx-auto mt-20">
@@ -49,25 +52,36 @@ export const DemandPageComponent = ({
             />
           </div>
         </div>
-        <div className="w-full mt-8 flex justify-between items-center">
-          <h2 className="text-[32px] font-medium">Upvote Here</h2>
-          <div
-            className="h-20 w-20 flex items-center justify-center rounded-full bg-[#38EA35] text-white"
-            onClick={voteHandler}
-          >
-            <ThumbUp className="text-[48px] cursor-pointer" />
+        {session && session.user && session.user.role === "basic" && (
+          <div className="w-full mt-8 flex justify-between items-center">
+            <h2 className="text-[32px] font-medium">Upvote Here</h2>
+            <div
+              className="h-20 w-20 flex items-center justify-center rounded-full bg-[#38EA35] text-white"
+              onClick={voteHandler}
+            >
+              <ThumbUp className="text-[48px] cursor-pointer" />
+            </div>
           </div>
-        </div>
-        <div className="w-full mt-8 flex justify-between items-center transition-all hover:scale-105 cursor-pointer">
-          <h2
-            className="text-[32px] font-medium bg-sec p-4 rounded-lg text-white"
-            onClick={() => {
-              router.push(`/demand/${id}/proposal`);
-            }}
-          >
-            Submit a proposal
-          </h2>
-        </div>
+        )}
+        {session && session.user && session.user.role === "vendor" && (
+          <div className="w-full mt-8 flex justify-between items-center transition-all hover:scale-105 cursor-pointer">
+            {!active &&
+              (!proposals.find((el) => {
+                return el.creator._id === session.user.id;
+              }) ? (
+                <h2
+                  className="text-[32px] font-medium bg-sec p-4 rounded-lg text-white"
+                  onClick={() => {
+                    router.push(`/demand/${id}/proposal`);
+                  }}
+                >
+                  Submit a proposal
+                </h2>
+              ) : (
+                "Proposal submitted, sit tight"
+              ))}
+          </div>
+        )}
       </div>
       <div id="title" className="mt-8 mb-4">
         <h1 className="text-[24px] md:text-[32px] font-bold">{title}</h1>
