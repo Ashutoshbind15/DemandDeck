@@ -1,9 +1,9 @@
 import React from "react";
-import {LinkedIn,Instagram,GitHub} from "../../public/icons"
+import { LinkedIn, Instagram, GitHub } from "../../public/icons";
 
 const Footer = () => {
   return (
-    <div className="max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-[hsl(198,94%,53%)]">
+    <div className="max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-[hsl(198,94%,53%)] border-t-4">
       <div>
         <h1 className="w-full text-3xl font-bold text-black">
           DemandDeck Tech.
@@ -14,9 +14,9 @@ const Footer = () => {
           accusantium.
         </p>
         <div className="flex justify-between md:w-[75%] my-6">
-            {LinkedIn}
-            {Instagram}
-            {GitHub}
+          {LinkedIn}
+          {Instagram}
+          {GitHub}
         </div>
       </div>
       <div className="lg:col-span-2 flex justify-between mt-6">

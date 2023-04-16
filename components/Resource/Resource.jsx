@@ -13,7 +13,7 @@ const Resource = ({ resource, bussId }) => {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-around py-4 px-2 rounded-lg shadow-lg bg-gray-800 font-semibold text-white my-4 mx-8">
+      <div className="flex flex-col items-center justify-around rounded-lg shadow-lg bg-gray-800 font-semibold text-white my-4 mx-8 px-24 text-xl py-8 hover:scale-105 transition-all">
         <div className="">{resource.product}</div>
         <div>service: {resource.service}</div>
         <div>sold by: {resource.seller}</div>

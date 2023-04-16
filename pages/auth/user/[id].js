@@ -18,7 +18,7 @@ export default function UserPage() {
   if (!user) return <p>Loading</p>;
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full px-4 py-6">
       <div className="w-full flex flex-col justify-center items-center">
         <h1 className="text-[48px] font-bold"> {user.name} </h1>
         <h5 className="text-[20px] text-gray-500"> {user.email} </h5>
@@ -55,6 +55,7 @@ export default function UserPage() {
             key={el._id}
             id={el._id}
             title={el.onRequest.title}
+            desc={user.name}
           />
         ))}
       </div>

@@ -6,7 +6,6 @@ import { getServerSession } from "next-auth";
 
 const AllocatorPage = () => {
   const { user } = useUser();
-
   console.log(user);
 
   return (
