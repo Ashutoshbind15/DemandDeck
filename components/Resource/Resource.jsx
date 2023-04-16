@@ -3,10 +3,12 @@ import React from "react";
 
 const Resource = ({ resource, bussId }) => {
   const requestHandler = async () => {
-    const { data } = await axios.post(
-      "http://localhost:3000/api/resource/request",
-      { itemId: resource.productId, allId: resource.sellerId, id: bussId }
-    );
+    const { data } = await axios.post("/api/resource/request", {
+      itemId: resource.productId,
+      allId: resource.sellerId,
+      id: bussId,
+      quantity: resource.amt,
+    });
   };
 
   return (
