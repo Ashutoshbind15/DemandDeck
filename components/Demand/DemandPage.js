@@ -98,7 +98,9 @@ export const DemandPageComponent = ({
         </div>
         <div className="w-full md:w-3/5 grid grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-2">
           {tags?.map((el) => (
-            <p className="text-gray-500">{el}</p>
+            <p className="text-gray-500" key={Math.random.toString()}>
+              {el}
+            </p>
           ))}
         </div>
       </div>

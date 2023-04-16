@@ -46,6 +46,7 @@ const DemandPage = () => {
                 proposal={prop}
                 demandId={id}
                 proposalAcceptHandler={proposalAcceptHandler}
+                key={Math.random.toString()}
               />
             )
         )}

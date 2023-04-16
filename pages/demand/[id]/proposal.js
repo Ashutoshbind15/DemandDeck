@@ -43,7 +43,10 @@ const Proposal = () => {
       {show && (
         <div className="my-3 flex flex-wrap px-12">
           {recommendations.map((el) => (
-            <div className="mx-2 rounded-lg text-white font-bold bg-slate-800 px-10 my-2 py-6">
+            <div
+              className="mx-2 rounded-lg text-white font-bold bg-slate-800 px-10 my-2 py-6"
+              key={Math.random.toString()}
+            >
               <div>product: {el.product}</div>
               <div>service: {el.service}</div>
               <div>Availabilty: {el.amt}</div>

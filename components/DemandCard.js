@@ -38,7 +38,9 @@ export default function DemandCard({
         <h2 className="text-[12px] md:text-[16px] text-center">
           {" "}
           {tags.map((el) => (
-            <p className="mx-2">{el}</p>
+            <p className="mx-2" key={Math.random.toString()}>
+              {el}
+            </p>
           ))}{" "}
         </h2>
         <div className="flex justify-center items-center">

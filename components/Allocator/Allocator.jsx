@@ -14,13 +14,21 @@ const Allocator = ({ allocator }) => {
         </div>
       </div>
       {allocator?.resourcesClassified.available.map((el) => (
-        <AvailableResource res={el} />
+        <AvailableResource res={el} key={Math.random.toString()} />
       ))}
       {allocator?.resourcesClassified.allocated.map((el) => (
-        <AvailableResource res={el} allocated={true} />
+        <AvailableResource
+          res={el}
+          allocated={true}
+          key={Math.random.toString()}
+        />
       ))}
       {allocator?.resourcesClassified.requests.map((el) => (
-        <AvailableResource res={el} requested={true} />
+        <AvailableResource
+          res={el}
+          requested={true}
+          key={Math.random.toString()}
+        />
       ))}
     </div>
   );
