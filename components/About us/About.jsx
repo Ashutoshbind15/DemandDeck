@@ -75,7 +75,7 @@ export default function Plans() {
               <div>
                 Meet Ashutosh Singh, a talented full stack web developer who has
                 already made impressive strides in his career despite being only
-                in his second year at NIT Patna. Ashutosh's proficiency in web
+                in his second year at NIT Patna. Ashutoshs proficiency in web
                 development has allowed him to create a stunning website using
                 Next.js and Node. However, his interests are not limited to just
                 coding. He also has a strong penchant for reading and
