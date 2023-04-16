@@ -33,6 +33,9 @@ export default function Auth({ signup, setSignup }) {
 
   return (
     <div className="w-screen flex flex-col md:flex-row justify-around items-center px-10 py-4">
+      <div className="w-full md:w-2/5">
+        <img src="/images/auth.png" className="w-full object-cover" alt="authImage" />
+      </div>
       <div className="w-full md:w-2/5"></div>
       <div className="w-full md:text-left text-center md:w-2/5">
         <h1 className="text-[32px] md:text-[48px] font-bold leading-tight">
