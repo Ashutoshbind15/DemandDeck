@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 export default function Plans() {
@@ -22,17 +23,23 @@ export default function Plans() {
                 </div>
               )}
               <br></br>
-              {!showContent1 && 
+              {!showContent1 && (
                 <div className="h-[250px] w-full mb-8">
-                <img src = "/images/auth.png" className="h-full w-full object-contain"/>
+                  <Image
+                    src="/images/auth.png"
+                    className="h-full w-full object-contain"
+                    width={200}
+                    height={100}
+                    alt="auth"
+                  />
                 </div>
-              }
+              )}
 
               <button
                 onClick={() => setShowContent1(!showContent1)}
                 className="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
               >
-                  {showContent1 ? "Hide Content" : "Show Content"}
+                {showContent1 ? "Hide Content" : "Show Content"}
               </button>
             </div>
           </div>
@@ -52,11 +59,17 @@ export default function Plans() {
                 </div>
               )}
               <br></br>
-              {!showContent2 && 
+              {!showContent2 && (
                 <div className="h-[250px] w-full mb-8">
-                <img src = "/images/about.jpg" className="h-full w-full object-contain"/>
+                  <Image
+                    src="/images/about.jpg"
+                    className="h-full w-full object-contain"
+                    alt="about"
+                    width={200}
+                    height={100}
+                  />
                 </div>
-              }
+              )}
               <button
                 onClick={() => setShowContent2(!showContent2)}
                 className="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
@@ -81,16 +94,22 @@ export default function Plans() {
                 </div>
               )}
               <br></br>
-              {!showContent3 && 
+              {!showContent3 && (
                 <div className="h-[250px] w-full mb-8">
-                <img src = "/images/experience.png" className="h-full w-full object-contain"/>
+                  <Image
+                    src="/images/experience.png"
+                    className="h-full w-full object-contain"
+                    alt="experience"
+                    width={200}
+                    height={100}
+                  />
                 </div>
-              }
+              )}
               <button
                 onClick={() => setShowContent3(!showContent3)}
                 className="bg-pink hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
               >
-                  {showContent3 ? "Hide Content" : "Show Content"}
+                {showContent3 ? "Hide Content" : "Show Content"}
               </button>
             </div>
           </div>

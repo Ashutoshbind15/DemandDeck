@@ -1,13 +1,13 @@
-import { LocationOn } from "@mui/icons-material";
 import React from "react";
 import Avatar from "../UI/Avatar";
+import { Location } from "../../public/icons";
 
 export default function Dashboard() {
   return (
     <div className="w-full flex flex-col items-center">
       <h1 className="text-[48px] font-bold mt-8">Laundary Services Required</h1>
       <p className="text-gray-500">
-        <LocationOn />
+        {Location}
         6A/155 I.T Crossing Faizabad Road, Lucknow
       </p>
       <div className="w-20 relative">

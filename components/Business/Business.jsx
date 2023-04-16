@@ -7,7 +7,11 @@ const Profile = ({ business }) => {
       <div className="flex py-12">
         <div className="flex flex-col mx-2 items-center justify-around w-1/2 px-8">
           <div className="h-72 bg-red-400 relative w-full">
-            <Image src={"/images/business_profile.png"} fill={true} />
+            <Image
+              src={"/images/business_profile.png"}
+              fill={true}
+              alt="busprof"
+            />
           </div>
           <div className="my-4">{business?.onRequest.title}</div>
         </div>
