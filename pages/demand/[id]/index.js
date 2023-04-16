@@ -54,7 +54,7 @@ const DemandPage = () => {
 
       {demand?.active && (
         <div
-          className="btn btn-primary mb-8 py-8 px-28"
+          className="btn btn-primary"
           onClick={() =>
             router.push(
               `/business/${JSON.parse(JSON.stringify(demand.active._id))}`
