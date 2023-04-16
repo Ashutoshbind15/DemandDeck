@@ -1,12 +1,11 @@
 import React from "react";
 
-import { Location, ThumbUp } from "../../public/icons";
+import { Location } from "../../public/icons";
 
 import { useRouter } from "next/router";
 import { usePollMutations } from "../../hooks/mutations";
-import Avatar from "../UI/Avatar";
+
 import { useSession } from "next-auth/react";
-import Image from "next/image";
 
 export const DemandPageComponent = ({
   numresp,
@@ -44,10 +43,10 @@ export const DemandPageComponent = ({
           <div className="w-full mt-8 flex justify-between items-center">
             <h2 className="text-[32px] font-medium">Upvote Here</h2>
             <div
-              className="h-20 w-20 flex items-center justify-center rounded-full bg-[#38EA35] text-white"
+              className="h-20 w-20 flex items-center justify-center rounded-full bg-[#38EA35] text-white hover:cursor-pointer"
               onClick={voteHandler}
             >
-              <ThumbUp className="text-[48px] cursor-pointer" />
+              {"+"}
             </div>
           </div>
         )}

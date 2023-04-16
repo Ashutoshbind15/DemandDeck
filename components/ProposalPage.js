@@ -1,4 +1,3 @@
-import { Email } from "@mui/icons-material";
 import React, { useState } from "react";
 import { usePollMutations } from "../hooks/mutations";
 import { useRouter } from "next/router";

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { Favorite, Location } from "../public/icons";
+import { Location } from "../public/icons";
 
 export default function DemandCard({
   numsup,
@@ -18,9 +18,7 @@ export default function DemandCard({
       onClick={() => router.push(`/demand/${id}`)}
     >
       <div className="w-2/5 md:w-full h-full md:h-1/2 rounded-ss-2xl rounded-es-2xl md:rounded-t-2xl md:rounded-es-none flex justify-center items-center bg-sec">
-        <div className="absolute top-0 left-0 md:right-0 p-1 md:p-4 cursor-pointer">
-          {Favorite}
-        </div>
+        <div className="absolute top-0 left-0 md:right-0 p-1 md:p-4 cursor-pointer"></div>
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-white text-[32px] md:text-[64px]"> {numsup} </h1>
           <h2 className="text-white md:text-[18px]">Supporters</h2>
