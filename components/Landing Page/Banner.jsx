@@ -1,5 +1,4 @@
 import React from "react";
-import Typed from "react-typed";
 
 export default function Banner() {
   return (

@@ -16,7 +16,7 @@ function App() {
           development, marketing, and business strategy, making them a
           formidable force in the industry. Through their website, they aim to
           provide a comprehensive suite of resources that can help entrepreneurs
-          succeed in today's ever-changing business landscape. With their
+          succeed in todays ever-changing business landscape. With their
           dedication and commitment to empowering others, they are sure to make
           a significant impact in the world of entrepreneurship
         </p>

@@ -9,8 +9,6 @@ export default function ProposalPage({ id }) {
   const [desc, setDesc] = useState("");
   const router = useRouter();
 
-  console.log(id);
-
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(title, desc);
