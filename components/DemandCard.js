@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { Location } from "../public/icons";
 
 export default function DemandCard({
   numsup,
@@ -42,7 +41,6 @@ export default function DemandCard({
           ))}{" "}
         </h2>
         <div className="flex justify-center items-center">
-          {Location}
           <h2 className="text-gray-500 text-center text-[10px] md:text-[14px]">
             {" "}
             {location}{" "}

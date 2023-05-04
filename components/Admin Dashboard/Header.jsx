@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
@@ -7,24 +6,16 @@ export default function Header() {
     <div className="bg-[hsl(309,90%,60%)] p-4">
       <div className="max-w-[1240px] py-[12px]  items-center flex justify-between ">
         <div className="text-3xl font-bold text-white">DemandDeck</div>
-        {toggle ? (
-          <AiOutlineClose
-            onClick={() => setToggle(!toggle)}
-            className="text-white text-2xl md:hidden block"
-          />
-        ) : (
-          <AiOutlineMenu
-            onClick={() => setToggle(!toggle)}
-            className="text-white text-2xl md:hidden block"
-          />
-        )}
+
         <ul className="hidden md:flex text-white gap-8">
           <li>Home</li>
           <li>Demands</li>
           <li>Create</li>
           <li>About Us</li>
           <li>
-          <button className="bg-white hover:bg-magenta-700 text-black font-bold py-0.2 px-10 rounded-full ">Login</button>
+            <button className="bg-white hover:bg-magenta-700 text-black font-bold py-0.2 px-10 rounded-full ">
+              Login
+            </button>
           </li>
         </ul>
         {/* Responsive Menu */}
@@ -33,7 +24,7 @@ export default function Header() {
          ${toggle ? "left-[0]" : "left-[-100%]"}  `}
         >
           <li className="p-5">Home</li>
-          <li className="p-5">Company</li>
+          <li className="p-5">About</li>
           <li className="p-5">Resource</li>
           <li className="p-5">About</li>
           <li className="p-5">Contact</li>

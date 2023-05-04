@@ -5,7 +5,6 @@ import { getUserData } from "../../utils/api";
 import { useUser } from "../../hooks/queries";
 
 import React, { useState } from "react";
-import { Menu, Close } from "../../public/icons";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -26,16 +25,12 @@ const Navbar = () => {
         <button
           onClick={() => setToggle(!toggle)}
           className="text-white text-2xl md:hidden block"
-        >
-          {Close}
-        </button>
+        ></button>
       ) : (
         <button
           onClick={() => setToggle(!toggle)}
           className="text-white text-2xl md:hidden block"
-        >
-          {Menu}
-        </button>
+        ></button>
       )}
       <div className="w-1/3 hidden md:flex justify-between text-white">
         {session && (

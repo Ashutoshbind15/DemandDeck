@@ -26,7 +26,7 @@ export default function Plans() {
               {!showContent1 && (
                 <div className="h-[250px] w-full mb-8">
                   <Image
-                    src="/images/auth.png"
+                    src="/images/signup.jpg"
                     className="h-full w-full object-contain"
                     width={200}
                     height={100}
@@ -62,7 +62,7 @@ export default function Plans() {
               {!showContent2 && (
                 <div className="h-[250px] w-full mb-8">
                   <Image
-                    src="/images/about.jpg"
+                    src="/images/about_us.jpg"
                     className="h-full w-full object-contain"
                     alt="about"
                     width={200}
@@ -97,9 +97,9 @@ export default function Plans() {
               {!showContent3 && (
                 <div className="h-[250px] w-full mb-8">
                   <Image
-                    src="/images/experience.png"
+                    src="/images/progress.jpg"
                     className="h-full w-full object-contain"
-                    alt="experience"
+                    alt="progress"
                     width={200}
                     height={100}
                   />

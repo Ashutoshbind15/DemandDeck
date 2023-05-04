@@ -1,10 +1,6 @@
 import React from "react";
-
-import { Location } from "../../public/icons";
-
 import { useRouter } from "next/router";
 import { usePollMutations } from "../../hooks/mutations";
-
 import { useSession } from "next-auth/react";
 
 export const DemandPageComponent = ({
@@ -50,7 +46,7 @@ export const DemandPageComponent = ({
             </div>
           </div>
         )}
-        
+
         {session && session.user && session.user.role === "vendor" && (
           <div className="w-full mt-8 flex justify-between items-center transition-all hover:scale-105 cursor-pointer">
             {!active &&
@@ -75,10 +71,11 @@ export const DemandPageComponent = ({
         <div id="title" className="mt-8 mb-4 text-xl font-bold">
           <h1 className="text-center text-[48px] my-8">{title}</h1>
           <div className="flex my-2">
-            <div> {Location}</div>
-            <h4 className = "text-center">6A/155 I.T Crossing Faizabad Road,Lucknow</h4>
+            <h4 className="text-center">
+              6A/155 I.T Crossing Faizabad Road,Lucknow
+            </h4>
           </div>
-        <hr className="mt-1" />
+          <hr className="mt-1" />
         </div>
         <div className="w-full md:w-3/5 description my-4 flex flex-col items-center">
           <h2 className="text-[20px] font-semibold my-2">Description</h2>

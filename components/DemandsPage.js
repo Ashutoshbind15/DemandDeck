@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Search, Tune, Favorite } from "../public/icons";
 import DemandCard from "./DemandCard";
 
 export default function DemandsPageComponent({ demands }) {
@@ -15,7 +14,6 @@ export default function DemandsPageComponent({ demands }) {
         <h2 class="text-2xl font-bold">1299 Demands</h2>
         <div class="flex justify-evenly items-center w-1/2">
           <div className="input-group my-2">
-            <button className="btn btn-square bg-white">{Search}</button>
             <input
               type="text"
               placeholder="Search"
@@ -24,9 +22,7 @@ export default function DemandsPageComponent({ demands }) {
               value={searchText}
             />
           </div>
-          {Tune}
         </div>
-        {Favorite}
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
