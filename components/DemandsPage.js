@@ -11,8 +11,8 @@ export default function DemandsPageComponent({ demands }) {
   return (
     <>
       <div class="px-4 flex justify-between items-center shadow-lg">
-        <h2 class="text-2xl font-bold">1299 Demands</h2>
-        <div class="flex justify-evenly items-center w-1/2">
+        <h2 class="text-2xl font-bold"> Demands</h2>
+        {/* <div class="flex justify-evenly items-center w-1/2">
           <div className="input-group my-2">
             <input
               type="text"
@@ -22,7 +22,7 @@ export default function DemandsPageComponent({ demands }) {
               value={searchText}
             />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
