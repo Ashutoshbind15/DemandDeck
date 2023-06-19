@@ -16,23 +16,14 @@ const Navbar = () => {
 
   const { user, isLoading, isError, error } = useUser();
   const [toggle, setToggle] = useState(false);
+
   return (
-    <div className="navbar justify-between bg-prim sticky top-0 z-10 px-6 text-xl">
+    <div className="flex flex-col navbar bg-prim sticky top-0 z-10 px-6 text-xl md:flex-row justify-between items-center">
       <Link href="/" className="text-xl font-bold text-white">
         DemandDeck
       </Link>
-      {toggle ? (
-        <button
-          onClick={() => setToggle(!toggle)}
-          className="text-white text-2xl md:hidden block"
-        ></button>
-      ) : (
-        <button
-          onClick={() => setToggle(!toggle)}
-          className="text-white text-2xl md:hidden block"
-        ></button>
-      )}
-      <div className="w-1/3 hidden md:flex justify-between text-white">
+
+      <div className="w-1/3 flex flex-col md:flex-row justify-between text-white mx-4">
         {session && (
           <Link
             href={`/auth/user/${session.user.id}`}
@@ -41,23 +32,37 @@ const Navbar = () => {
             {user?.name}
           </Link>
         )}
-        <Link href="/demand" className="hover:border-b-2 border-white">
+        <Link href="/demand" className="hover:border-b-2 border-white mx-4">
           Demands
         </Link>
+        {session && session?.user?.role === "allocator" && (
+          <Link
+            href="/resource/new"
+            className="hover:border-b-2 border-white mx-4"
+          >
+            New Resource
+          </Link>
+        )}
         {session && session.user && session.user.role === "basic" && (
-          <Link href="/demand/new" className="hover:border-b-2 border-white">
+          <Link
+            href="/demand/new"
+            className="hover:border-b-2 border-white mx-4"
+          >
             Create
           </Link>
         )}
         {session && session.user && session.user.role === "allocator" && (
-          <Link href="/allocator" className="hover:border-b-2 border-white">
+          <Link
+            href="/allocator"
+            className="hover:border-b-2 border-white mx-4"
+          >
             Allocate
           </Link>
         )}
       </div>
 
       {!session && (
-        <Link href="/auth" className="hidden md:block">
+        <Link href="/auth" className="">
           <button className="btn w-40 rounded-full border-none bg-white text-black transition duration-300 ease-in-out  hover:text-prim hover:bg-white">
             Login
           </button>
@@ -71,16 +76,6 @@ const Navbar = () => {
           Logout
         </button>
       )}
-
-      <div
-        className={`duration-300 flex flex-col items-start justify-around md:hidden w-full h-[200px] text-white fixed bg-black top-16 
-       ${toggle ? "left-[0]" : "left-[-100%]"}  `}
-      >
-        <Link href="/">Home</Link>
-        <Link href="/demand">Demands</Link>
-        <Link href="/demand/new">Create</Link>
-        <Link href="/auth">Login</Link>
-      </div>
     </div>
   );
 };
