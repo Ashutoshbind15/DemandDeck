@@ -39,10 +39,11 @@
 import React from "react";
 import Avatar from "../UI/Avatar";
 import AvailableResource from "./AvailableResource";
+import Link from "next/link";
 
 const Allocator = ({ allocator }) => {
   return (
-    <div className="my-6  mx-auto">
+    <div className="my-6 mx-auto flex flex-col items-center">
       {/* {JSON.stringify(allocator)} */}
       <div className="flex p-4 h-[100px] w-[400px] shadow-lg text-blue-600 mx-auto">
         <Avatar src={allocator?.name} />
@@ -55,14 +56,19 @@ const Allocator = ({ allocator }) => {
           </h1>
         </div>
       </div>
+
+      <Link href={"/resource/new"} className="text-center btn mt-12 w-1/5 py-4">
+        Create new
+      </Link>
+
       <div className="py-6 my-6 shadow-lg flex  justify-center">
         <div className="w-[400px]">
-          {allocator?.resourcesClassified.available.map((el) => (
+          {allocator?.resourcesClassified?.available.map((el) => (
             <AvailableResource res={el} key={Math.random.toString()} />
           ))}
         </div>
         <div className="w-[400px]">
-          {allocator?.resourcesClassified.allocated.map((el) => (
+          {allocator?.resourcesClassified?.allocated.map((el) => (
             <AvailableResource
               res={el}
               allocated={true}
@@ -71,7 +77,7 @@ const Allocator = ({ allocator }) => {
           ))}
         </div>
         <div className="w-[400px]">
-          {allocator?.resourcesClassified.requests.map((el) => (
+          {allocator?.resourcesClassified?.requests.map((el) => (
             <AvailableResource
               res={el}
               requested={true}

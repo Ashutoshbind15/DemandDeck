@@ -16,10 +16,9 @@ export default function Plans() {
             <div className="p-4">
               {showContent1 && (
                 <div>
-                  if Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
-                  minima quos nisi modi amet quae eveniet ullam, quaerat nemo
-                  repellendus maxime hic sit fuga tempore eaque illo numquam eum
-                  nihil!
+                  The signin process is very simple and u can signup or login
+                  via email and password by navigating to the {"/auth"} page of
+                  via the navbar
                 </div>
               )}
               <br></br>
@@ -52,10 +51,9 @@ export default function Plans() {
             <div className="p-4">
               {showContent2 && (
                 <div>
-                  if Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
-                  minima quos nisi modi amet quae eveniet ullam, quaerat nemo
-                  repellendus maxime hic sit fuga tempore eaque illo numquam eum
-                  nihil!
+                  The website tries to redefine the demand and supply chain by
+                  helping out and providing for the customers as well as the
+                  vendors, allocators, and middle men
                 </div>
               )}
               <br></br>
@@ -87,10 +85,8 @@ export default function Plans() {
             <div className="p-4">
               {showContent3 && (
                 <div>
-                  if Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
-                  minima quos nisi modi amet quae eveniet ullam, quaerat nemo
-                  repellendus maxime hic sit fuga tempore eaque illo numquam eum
-                  nihil!
+                  The admins of the app will shortly review the proposals after
+                  being sent and will approve them accordingly!
                 </div>
               )}
               <br></br>

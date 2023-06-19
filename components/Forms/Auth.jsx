@@ -4,6 +4,7 @@ import Login from "./Login";
 import { signIn } from "next-auth/react";
 import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Auth({ signup, setSignup }) {
   const [username, setUsername] = useState("");
@@ -11,7 +12,7 @@ export default function Auth({ signup, setSignup }) {
   const [password, setPassword] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
-
+  const router = useRouter();
   const [role, setRole] = useState("select role");
 
   const submitHandler = async (e) => {
@@ -32,6 +33,7 @@ export default function Auth({ signup, setSignup }) {
         password,
       });
     }
+    router.push("/");
   };
   if (isLoading)
     return (

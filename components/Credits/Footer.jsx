@@ -1,34 +1,46 @@
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
+  const { data: session } = useSession();
+
   return (
-    <div className="max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-[hsl(198,94%,53%)] border-t-4">
-      <div>
+    <div className="py-16 px-24 flex w-full text-[hsl(198,94%,53%)] border-t-4 flex-col md:flex-row items-center justify-around">
+      <div className="md:w-2/5 flex flex-col">
         <h1 className="w-full text-3xl font-bold text-black">
           DemandDeck Tech.
         </h1>
         <p className="py-4">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit
-          ullam iste repellat consequatur libero reiciendis, blanditiis
-          accusantium.
+          DemandDeck is a website to simplify each stage of Demand and Supply
+          chain, such that even a local vendor can reach a wider audience to get
+          the maximum output out of his service and consumer can get the best
+          service according to his needs.
         </p>
-        <div className="flex justify-between md:w-[75%] my-6"></div>
       </div>
-      <div className="lg:col-span-2 flex justify-between mt-6">
-        <div>
-          <h6 className="font-medium text-black">Support</h6>
-          <ul>
-            <li className="py-2 text-sm">Documentation</li>
-            <li className="py-2 text-sm">Guides</li>
-            <li className="py-2 text-sm">Proposal Status</li>
-          </ul>
+      <div className="flex w-full md:w-3/5 pl-12 items-center justify-around">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="font-semibold text-black font-sans text-xl mb-4">
+            Links
+          </h1>
+          <Link href={"/"}>Home</Link>
+          <Link href={"/demand"}>Demands</Link>
+          <Link href={"/auth"}>Log In</Link>
         </div>
-        <div>
-          <h6 className="font-medium text-black">About</h6>
-          <ul>
-            <li className="py-2 text-sm">About</li>
-            <li className="py-2 text-sm">Blog</li>
-          </ul>
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="font-semibold text-black font-sans text-xl mb-4">
+            Demands
+          </h1>
+          <Link href={"/demand/new"}>New Demand</Link>
+          <Link href={"/demand"}>All Demands</Link>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="font-semibold text-black font-sans text-xl mb-4">
+            Specific Links
+          </h1>
+          <Link href={`/auth/user/${session?.user?.id}`}>Profile</Link>
+          <Link href={"/resource/new"}>New Resource</Link>
+          <Link href={"/allocator"}>Allocate</Link>
         </div>
       </div>
     </div>

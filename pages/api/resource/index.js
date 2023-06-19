@@ -14,6 +14,7 @@ const handler = async (req, res) => {
   // const { id } = req.body;
   if (req.method == "POST") {
     const { title, service, quantity, id } = req.body;
+    console.log(req.body);
     const resource = new Resource({ title, service });
 
     const user = await User.findById(id);

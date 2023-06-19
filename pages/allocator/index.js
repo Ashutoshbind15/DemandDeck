@@ -3,6 +3,7 @@ import { useUser } from "../../hooks/queries";
 import Allocator from "../../components/Allocator/Allocator";
 import { authOptions } from "../api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
+import { setCookie } from "cookies-next";
 
 const AllocatorPage = () => {
   const { user } = useUser();
@@ -20,7 +21,9 @@ export default AllocatorPage;
 export const getServerSideProps = async (context) => {
   const session = await getServerSession(context.req, context.res, authOptions);
 
-  if (session && session?.user?.role !== "allocator") {
+  setCookie("err", "Not an allocator", { req: context.req, res: context.res });
+
+  if (!session || session?.user?.role !== "allocator") {
     return {
       redirect: {
         destination: "/",
