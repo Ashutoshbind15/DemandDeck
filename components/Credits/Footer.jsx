@@ -41,6 +41,7 @@ const Footer = () => {
           <Link href={`/auth/user/${session?.user?.id}`}>Profile</Link>
           <Link href={"/resource/new"}>New Resource</Link>
           <Link href={"/allocator"}>Allocate</Link>
+          <Link href={"/about"}>About us</Link>
         </div>
       </div>
     </div>
