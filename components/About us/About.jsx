@@ -25,17 +25,7 @@ export default function Plans() {
               alt={"profile"}
             />
             <div className="p-4">
-              <div>
-                Introducing Shazeb Khan, a talented full stack web developer
-                currently pursuing his second year at NIT Patna. Ashutosh has
-                demonstrated remarkable proficiency in web development, having
-                already created an impressive website using Next.js and Node.
-                Along with his love for coding, Ashutosh has a deep-seated
-                interest in exploring the latest technologies and staying
-                abreast of the newest developments in the tech world. He is
-                always eager to learn about new advancements in the industry and
-                is constantly pushing himself to learn more.
-              </div>
+              <div></div>
               <br></br>
             </div>
           </div>
@@ -72,17 +62,7 @@ export default function Plans() {
               alt={"profile"}
             />
             <div className="p-4">
-              <div>
-                Meet Ashutosh Singh, a talented full stack web developer who has
-                already made impressive strides in his career despite being only
-                in his second year at NIT Patna. Ashutoshs proficiency in web
-                development has allowed him to create a stunning website using
-                Next.js and Node. However, his interests are not limited to just
-                coding. He also has a strong penchant for reading and
-                discovering the mysteries of Hindu mythology and paranormal
-                activities. With his diverse skill set and insatiable curiosity,
-                Ashutosh is undoubtedly a rising star in the tech world.
-              </div>
+              <div></div>
 
               <br></br>
             </div>

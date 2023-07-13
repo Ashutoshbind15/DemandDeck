@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Banner() {
   return (
-    <div className="bg-[url('/images/home.jpg')] bg-center bg-cover h-screen flex flex-col justify-center items-center">
+    <div className="bg-[url('/images/home.jpg')] bg-center bg-cover h-screen flex flex-col justify-center items-center w-full">
       <h3 className="text-xl text-white md:text-[40px] font-bold my-8">
         DemandDeck
       </h3>
