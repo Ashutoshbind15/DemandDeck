@@ -11,7 +11,7 @@ const VerticalProgress = ({ data, title = "Title" }) => {
       </h1>
       <ul className="steps steps-vertical">
         {data.map((el) => (
-          <li className="step step-primary">
+          <li className="step step-primary" key={el.id}>
             <div className="py-4">{el.desc}</div>
           </li>
         ))}

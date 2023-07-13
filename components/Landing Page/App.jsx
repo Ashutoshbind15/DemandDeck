@@ -32,12 +32,15 @@ function LandingPageComponent() {
           data={[
             {
               desc: "Joining in, consumers can post thier demands.",
+              id: 0,
             },
             {
               desc: "They can post thier demands and others can support it, making a demand more popular",
+              id: 1,
             },
             {
               desc: "Finally, a person's demand is satisfied, and they can further rate the service",
+              id: 2,
             },
           ]}
           title="Consumer"
@@ -46,18 +49,23 @@ function LandingPageComponent() {
           data={[
             {
               desc: "Signing in, vendors can look at the demands to fulfill",
+              id: 0,
             },
             {
               desc: "They can submit a proposal to our admins, if interested in fulfilling a demand",
+              id: 1,
             },
             {
               desc: "While submitting, they can also view at the available resources of the reason to help him set up a business",
+              id: 2,
             },
             {
               desc: "After a proposal is accepted, A business session is set up for them",
+              id: 3,
             },
             {
               desc: "They can look for resources and customer reviews by managing their session, once set up",
+              id: 4,
             },
           ]}
           title="Vendor"
@@ -66,12 +74,15 @@ function LandingPageComponent() {
           data={[
             {
               desc: "Allocators can upload the resources",
+              id: 0,
             },
             {
               desc: "The resources help the vendors, who send in requests for resources for demands",
+              id: 1,
             },
             {
               desc: "They can accept or reject the incoming requests, to manage their resources",
+              id: 2,
             },
           ]}
           title="Allocator"
